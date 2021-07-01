@@ -25,8 +25,10 @@ public class ProyectoListaReales {
             System.out.println("«[6] Mostrar elementos»");
             System.out.println("«[7] Orden ascendente»");
             System.out.println("«[8] Orden descendente»");
-            System.out.println("«[9] Salir»");
-            System.out.print("«Ingrese opcion (1-9): «");
+            System.out.println("«[9] Abrir valor»");
+            System.out.println("«[10] Guardar valor»");
+            System.out.println("«[11] Salir»");
+            System.out.print("«Ingrese opcion (1-11): «");
             opcion = entrada.nextInt();
             switch (opcion) {
                 case 1:
@@ -53,8 +55,17 @@ public class ProyectoListaReales {
                 case 8:
                     ordenarDescendente();
                     break;
+                case 9:
+                    abrirValor();
+                    break;
+                case 10:
+                    guardarValor();
+                    break;
+                case 11:
+                    salir();
+                    break;
             }
-        } while (opcion != 9);
+        } while (opcion != 11);
     }
     public void ingresarValor() {
         Scanner entrada = new Scanner(System.in);
@@ -135,6 +146,18 @@ public class ProyectoListaReales {
         Comparator<Double> comparador = Collections.reverseOrder();
         Collections.sort(listaReales, comparador);
         mostrarLista();
+    }
+
+    public void salir() {
+         System.out.println("salir del sistema");
+    }
+
+    public void abrirValor() {
+        System.out.println("abrir lista de valores"); 
+    }
+
+    public void guardarValor() {
+         System.out.println("guardar lista de valores");
     }
 
 }
